@@ -1,6 +1,7 @@
 package com.uc.ms_security.controller;
 
 import com.uc.ms_security.dto.UserSessionsResponseDTO;
+import com.uc.ms_security.dto.UserRolesResponseDTO;
 import com.uc.ms_security.dto.user.CreateUserDTO;
 import com.uc.ms_security.dto.user.UpdateUserDTO;
 import com.uc.ms_security.dto.user.UserDetailResponseDTO;
@@ -58,5 +59,12 @@ public class UserController {
             @PathVariable Long id) {
 
         return userService.findByIdAndSessions(id);
+    }
+
+    @GetMapping("/{id}/detail-with-roles")
+    public UserRolesResponseDTO findByIdAndRoles(
+            @PathVariable Long id) {
+
+        return userService.findByIdAndRoles(id);
     }
 }
