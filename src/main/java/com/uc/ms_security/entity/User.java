@@ -34,7 +34,8 @@ public class User {
     private String email;
 
     @Column(
-            nullable = false
+            nullable = false,
+            length = 255
     )
     private String password;
 
